@@ -1,3 +1,9 @@
+import Layout from '../components/layout'
+
 export default function HomePage() {
-    return <div>Welcome to Next.js with TailwindCSS!</div>
+    return (
+        <Layout>
+            <div>HOME PAGE CONTENT</div>
+        </Layout>
+    )
 }
