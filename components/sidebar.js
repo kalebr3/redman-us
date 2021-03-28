@@ -6,6 +6,10 @@ export default function Sidebar() {
                     <span className="text-gray-800 text-2xl font-semibold">Kaleb Redman</span>
                 </div>
             </div>
+
+            <nav className="flex flex-col mt-10 px-4 text-center">
+                <a href="#" className="mt-3 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-200 rounded">Home</a>
+            </nav>
         </div>
     )
 }
