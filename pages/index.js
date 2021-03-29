@@ -4,7 +4,9 @@ import Placeholder from '../components/placeholder'
 export default function HomePage() {
     return (
         <Layout header="Home Page">
-            <Placeholder text="HOME PAGE CONTENT" />
+            <div className="grid place-items-center h-96 text-gray-500 text-xl">
+                HELLO WORLD!
+            </div>
         </Layout>
     )
 }
