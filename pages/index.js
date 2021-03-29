@@ -1,9 +1,10 @@
 import Layout from '../components/layout'
+import Placeholder from '../components/placeholder'
 
 export default function HomePage() {
     return (
         <Layout header="Home Page">
-            <div>HOME PAGE CONTENT</div>
+            <Placeholder text="HOME PAGE CONTENT" />
         </Layout>
     )
 }
