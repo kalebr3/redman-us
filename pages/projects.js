@@ -3,7 +3,7 @@ import Placeholder from '../components/placeholder'
 
 export default function Projects() {
     return (
-        <Layout header="Projects Page">
+        <Layout header="Projects">
             <Placeholder text="PROJECTS PAGE CONTENT" />
         </Layout>
     )

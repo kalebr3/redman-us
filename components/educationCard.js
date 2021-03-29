@@ -10,15 +10,15 @@ function Description({ text }) {
     }
 }
 
-export default function CareerCard({ img, employer, title, start, end, description }) {
+export default function EducationCard({ img, school, degree, grad, description }) {
     return (
         <div className="max-w-sm bg-white border border-gray-300 p-6 m-1 rounded-md tracking-wide shadow-lg">
             <div className="flex items-center">
                 <img src={img} className="w-20 rounded-full border border-gray-300" />
                 <div className="leading-5 ml-6 sm">
-                    <h4 className="text-lg font-semibold">{title}</h4>
-                    <h5 className="font-semibold">{employer}</h5>
-                    <h6 className="text-sm font-semibold">{start} - {end}</h6>
+                    <h4 className="text-lg font-semibold">{degree}</h4>
+                    <h5 className="font-semibold">{school}</h5>
+                    <h6 className="text-sm font-semibold">Class of {grad}</h6>
                 </div>
             </div>
             <Description text={description} />
