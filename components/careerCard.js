@@ -12,7 +12,7 @@ function Description({ text }) {
 
 export default function CareerCard({ img, employer, title, start, end, description }) {
     return (
-        <div className="max-w-sm bg-white border border-gray-300 p-6 m-1 rounded-md tracking-wide shadow-lg">
+        <div className="w-96 bg-white border border-gray-300 p-6 m-1 rounded-2xl tracking-wide shadow-lg">
             <div className="flex items-center">
                 <img src={img} className="w-20 rounded-full border border-gray-300" />
                 <div className="leading-5 ml-6 sm">
