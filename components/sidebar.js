@@ -18,11 +18,11 @@ export default function Sidebar({ active, clickClear }) {
                     {/* Site Title */}
                     <div className="flex items-center justify-center mt-8">
                         <div className="flex items-center">
-                            <span className="text-gray-800 text-2xl font-semibold">Kaleb Redman</span>
+                            <span style={{fontFamily: 'raleway'}} className="uppercase text-gray-800 text-2xl font-semibold">Kaleb Redman</span>
                         </div>
                     </div>
                     {/* Navigation Menu */}
-                    <nav className="flex flex-col mt-8 px-4 text-center flex-grow">
+                    <nav style={{fontFamily: 'raleway'}} className="uppercase flex flex-col mt-8 px-4 text-center flex-grow">
                         <Link href="/">
                             <a className="py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-200 rounded">About Me</a>
                         </Link>
@@ -48,7 +48,7 @@ export default function Sidebar({ active, clickClear }) {
                             <FontAwesomeIcon icon={faGitlab} />
                         </div>
                         <div className="flex items-center justify-center m-6">
-                            <p>&copy;2021 Kaleb Redman</p>
+                            <p className="text-gray-400">&copy;2021 Kaleb Redman</p>
                         </div>
                     </footer>
                 </div>

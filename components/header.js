@@ -12,7 +12,7 @@ export default function Header({ clickMenu, text }) {
                     </button>
                 </div>
                 <div className="flex flex-grow items-center">
-                    <span className="text-gray-800 text-3xl font-semibold">{text}</span>
+                    <span style={{fontFamily: 'raleway'}} className="uppercase text-gray-800 text-3xl font-semibold">{text}</span>
                 </div>
             </header>
         )
