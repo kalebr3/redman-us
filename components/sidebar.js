@@ -13,7 +13,7 @@ export default function Sidebar({ active, clickClear }) {
                 <div className="flex flex-col min-h-screen">
                     {/* Profile Picture */}
                     <div className="flex items-center justify-center mt-8">
-                        <Image src="/profile_picture.jpg" width={150} height={150} className="rounded-full" />
+                        <img src="https://via.placeholder.com/150" className="rounded-full" />
                     </div>
                     {/* Site Title */}
                     <div className="flex items-center justify-center mt-8">
