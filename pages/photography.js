@@ -1,6 +1,6 @@
-import Layout from '../components/layout'
-import Section from '../components/section'
-import Placeholder from '../components/placeholder'
+import Layout from 'components/layout'
+import Section from 'components/section'
+import Placeholder from 'components/placeholder'
 
 export default function Photography() {
     return (

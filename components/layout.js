@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Head from 'next/head'
-import Sidebar from './sidebar'
-import Header from './header'
+import Sidebar from 'components/sidebar'
+import Header from 'components/header'
 
 export default function Layout({ header, children }) {
     const [active, setActive] = useState(false);

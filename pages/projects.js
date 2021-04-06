@@ -1,9 +1,9 @@
-import Layout from '../components/layout'
-import Section from '../components/section'
-import CardContainer from '../components/cardContainer'
-import ProjectCard from '../components/projectCard'
+import Layout from 'components/layout'
+import Section from 'components/section'
+import CardContainer from 'components/cardContainer'
+import ProjectCard from 'components/projectCard'
 
-import Placeholder from '../components/placeholder'
+import Placeholder from 'components/placeholder'
 
 export default function Projects() {
     return (

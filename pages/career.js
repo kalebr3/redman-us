@@ -1,9 +1,9 @@
-import Layout from '../components/layout'
-import Section from '../components/section'
-import CardContainer from '../components/cardContainer'
-import CareerCard from '../components/careerCard'
+import Layout from 'components/layout'
+import Section from 'components/section'
+import CardContainer from 'components/cardContainer'
+import CareerCard from 'components/careerCard'
 
-import Placeholder from '../components/placeholder'
+import Placeholder from 'components/placeholder'
 
 export default function Career() {
     return (

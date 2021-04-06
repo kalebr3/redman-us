@@ -1,9 +1,9 @@
-import Layout from '../components/layout'
-import Section from '../components/section'
-import CardContainer from '../components/cardContainer'
-import EducationCard from '../components/educationCard'
+import Layout from 'components/layout'
+import Section from 'components/section'
+import CardContainer from 'components/cardContainer'
+import EducationCard from 'components/educationCard'
 
-import Placeholder from '../components/placeholder'
+import Placeholder from 'components/placeholder'
 
 export default function Education() {
     return (
