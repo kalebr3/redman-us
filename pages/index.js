@@ -1,19 +1,22 @@
 import Layout from 'components/layout'
+import DynamicComponent from 'components/DynamicComponent'
 
 import Storyblok from 'lib/storyblok'
 
 export default function Home(props) {
+    const story = props.story
+
     return (
-        <Layout header="About Me">
-            <div className="grid place-items-center h-96 text-gray-500 text-xl">
-                { props.story ? props.story.name : 'HELLO WORLD!' }
-            </div>
+        <Layout header={ story ? story.name : null }>
+                { story ? story.content.body.map((blok) => (
+                    <DynamicComponent blok={blok} key={blok._uid} />
+                )) : null }
         </Layout>
     )
 }
 
 export async function getStaticProps(context) {
-    let slug = "home"
+    let slug = "about-me"
 
     let params = {
         version: "draft",
@@ -31,6 +34,6 @@ export async function getStaticProps(context) {
             story : data ? data.story : false,
             preview: context.preview || false
         },
-        revalidate: 10,
+        // revalidate: 10,
     }
 }
