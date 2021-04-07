@@ -1,9 +1,8 @@
 import Layout from 'components/layout'
 import DynamicComponent from 'components/DynamicComponent'
 
-import Storyblok from 'lib/storyblok'
-import useStoryblok from 'lib/storyblok-hook'
 import { getPageData, getGlobalData } from 'lib/api'
+import useStoryblok from 'lib/storyblok-hook'
 
 export default function Home({ global, story, preview }) {
     // Use Storyblok hook to enable live updates

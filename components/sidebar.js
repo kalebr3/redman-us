@@ -17,36 +17,28 @@ export default function Sidebar({ story, active, clickClear }) {
                     {/* Site Title */}
                     <div className="flex items-center justify-center mt-8">
                         <div className="flex items-center">
-                            <span style={{fontFamily: 'raleway'}} className="uppercase text-gray-800 text-2xl font-semibold">Kaleb Redman</span>
+                            <span style={{fontFamily: 'raleway'}} className="uppercase text-gray-800 text-2xl font-semibold">{ story ? story.content.site_name : null }</span>
                         </div>
                     </div>
                     {/* Navigation Menu */}
                     <nav style={{fontFamily: 'raleway'}} className="uppercase flex flex-col mt-8 px-4 text-center flex-grow">
-                        <Link href="/">
-                            <a className="py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-200 rounded">About Me</a>
-                        </Link>
-                        <Link href="/career">
-                            <a className="mt-3 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-200 rounded">Career</a>
-                        </Link>
-                        <Link href="/education">
-                            <a className="mt-3 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-200 rounded">Education</a>
-                        </Link>
-                        <Link href="/projects">
-                            <a className="mt-3 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-200 rounded">Projects</a>
-                        </Link>
-                        <Link href="/photography">
-                            <a className="mt-3 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-200 rounded">Photography</a>
-                        </Link>
+                        { story ? story.content.navigation_links.map((blok) => (
+                            <Link href={blok.url.url} key={blok._uid}>
+                                <a className="mt-3 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-200 rounded">{blok.label}</a>
+                            </Link>
+                        )) : null }
                     </nav>
                     {/* Social Menu and Footer */}
                     <footer>
                         <div className="flex items-center justify-around m-6">
-                            <FontAwesomeIcon icon={['fab', 'facebook']} />
-                            <FontAwesomeIcon icon={['fab', 'linkedin']} />
-                            <FontAwesomeIcon icon={['fab', 'github']} />
+                            { story ? story.content.social_links.map((blok) => (
+                                <a href={blok.url.url}>
+                                    <FontAwesomeIcon icon={[blok.icon_family, blok.icon_name]} />
+                                </a>
+                            )) : null }
                         </div>
                         <div className="flex items-center justify-center m-6">
-                            <p className="text-gray-400">&copy;2021 Kaleb Redman</p>
+                            <p className="text-gray-400">{ story ? story.content.footer : null }</p>
                         </div>
                     </footer>
                 </div>
