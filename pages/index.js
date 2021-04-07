@@ -3,13 +3,14 @@ import DynamicComponent from 'components/DynamicComponent'
 
 import Storyblok from 'lib/storyblok'
 import useStoryblok from 'lib/storyblok-hook'
+import { getPageData, getGlobalData } from 'lib/api'
 
-export default function Home({ story, preview }) {
+export default function Home({ global, story, preview }) {
     // Use Storyblok hook to enable live updates
     story = useStoryblok(story, preview)
 
     return (
-        <Layout header={ story ? story.name : null }>
+        <Layout data={global} header={ story ? story.name : null }>
                 { story ? story.content.body.map((blok) => (
                     <DynamicComponent blok={blok} key={blok._uid} />
                 )) : null }
@@ -29,11 +30,13 @@ export async function getStaticProps(context) {
         params.cv = Date.now()
     }
 
-    let { data } = await Storyblok.get(`cdn/stories/${slug}`, params)
+    let { globalData } = await getGlobalData(params)
+    let { pageData } = await getPageData(slug, params)
 
     return {
         props: {
-            story : data ? data.story : false,
+            global: globalData ? globalData.story : false,
+            story: pageData ? pageData.story : false,
             preview: context.preview || false
         },
         revalidate: 10,

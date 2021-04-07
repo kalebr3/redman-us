@@ -1,11 +1,10 @@
 // NextJS Imports
-import Image from 'next/image'
 import Link from 'next/link'
+
 // Font Awesome Imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faLinkedin, faGithub, faGitlab } from '@fortawesome/free-brands-svg-icons'
 
-export default function Sidebar({ active, clickClear }) {
+export default function Sidebar({ story, active, clickClear }) {
     return (
         <div className="flex h-screen bg-gray-100 font-roboto shadow">
             <div className={`${active ? 'block' : 'hidden'} fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden`} onClick={clickClear}></div>
@@ -13,7 +12,7 @@ export default function Sidebar({ active, clickClear }) {
                 <div className="flex flex-col min-h-screen">
                     {/* Profile Picture */}
                     <div className="flex items-center justify-center mt-8">
-                        <img src="https://via.placeholder.com/150" className="rounded-full" />
+                        <img src={ story ? story.content.profile_picture.filename : null } width="150" height="150" className="rounded-full" />
                     </div>
                     {/* Site Title */}
                     <div className="flex items-center justify-center mt-8">
@@ -42,10 +41,9 @@ export default function Sidebar({ active, clickClear }) {
                     {/* Social Menu and Footer */}
                     <footer>
                         <div className="flex items-center justify-around m-6">
-                            <FontAwesomeIcon icon={faFacebook} />
-                            <FontAwesomeIcon icon={faLinkedin} />
-                            <FontAwesomeIcon icon={faGithub} />
-                            <FontAwesomeIcon icon={faGitlab} />
+                            <FontAwesomeIcon icon={['fab', 'facebook']} />
+                            <FontAwesomeIcon icon={['fab', 'linkedin']} />
+                            <FontAwesomeIcon icon={['fab', 'github']} />
                         </div>
                         <div className="flex items-center justify-center m-6">
                             <p className="text-gray-400">&copy;2021 Kaleb Redman</p>
