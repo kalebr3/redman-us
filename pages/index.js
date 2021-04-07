@@ -4,9 +4,9 @@ import DynamicComponent from 'components/DynamicComponent'
 import Storyblok from 'lib/storyblok'
 import useStoryblok from 'lib/storyblok-hook'
 
-export default function Home(props) {
+export default function Home({ story, preview }) {
     // Use Storyblok hook to enable live updates
-    const story = useStoryblok(props.story)
+    story = useStoryblok(story, preview)
 
     return (
         <Layout header={ story ? story.name : null }>
@@ -18,10 +18,10 @@ export default function Home(props) {
 }
 
 export async function getStaticProps(context) {
-    let slug = "about-me"
+    let slug = "home"
 
     let params = {
-        version: "draft",
+        version: "published",
     }
 
     if (context.preview) {
@@ -36,6 +36,6 @@ export async function getStaticProps(context) {
             story : data ? data.story : false,
             preview: context.preview || false
         },
-        // revalidate: 10,
+        revalidate: 10,
     }
 }
