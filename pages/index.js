@@ -2,9 +2,11 @@ import Layout from 'components/layout'
 import DynamicComponent from 'components/DynamicComponent'
 
 import Storyblok from 'lib/storyblok'
+import useStoryblok from 'lib/storyblok-hook'
 
 export default function Home(props) {
-    const story = props.story
+    // Use Storyblok hook to enable live updates
+    const story = useStoryblok(props.story)
 
     return (
         <Layout header={ story ? story.name : null }>
