@@ -32,7 +32,7 @@ export default function Sidebar({ story, active, clickClear }) {
                     <footer>
                         <div className="flex items-center justify-around m-6">
                             { story ? story.content.social_links.map((blok) => (
-                                <a href={blok.url.url}>
+                                <a href={blok.url.url} key={blok._uid}>
                                     <FontAwesomeIcon icon={[blok.icon_family, blok.icon_name]} />
                                 </a>
                             )) : null }
