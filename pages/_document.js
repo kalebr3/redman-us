@@ -6,6 +6,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          {/* Adobe Fonts */}
           <link rel="stylesheet" href="https://use.typekit.net/wmo8lvj.css" />
         </Head>
         <body>
