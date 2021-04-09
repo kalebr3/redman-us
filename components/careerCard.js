@@ -8,7 +8,7 @@ export default function CareerCard({ blok }) {
 
     return (
         <>
-        {showModal ? (<Modal onClick={() => setShowModal(false)} />) : null}
+        {showModal ? (<Modal onClick={() => setShowModal(false)} header={blok.title} body={blok.description} footer={false} />) : null}
 
         <div className="w-96 bg-white border border-gray-300 p-4 m-2 rounded-2xl tracking-wide shadow-lg">
             <div className="flex items-center">
