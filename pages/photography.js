@@ -1,7 +1,5 @@
 import Layout from 'components/layout'
-import Section from 'components/section'
-
-import Placeholder from 'components/placeholder'
+import DynamicComponent from 'components/DynamicComponent'
 
 import { getPageData, getGlobalData } from 'lib/api'
 import useStoryblok from 'lib/storyblok-hook'
@@ -11,9 +9,9 @@ export default function Photography({ global, story, preview }) {
 
     return (
         <Layout data={global} header={ story ? story.name : null }>
-            <Section>
-                <Placeholder text="PHOTOGRAPHY" />
-            </Section>
+            { story ? story.content.body.map((blok) => (
+                <DynamicComponent blok={blok} key={blok._uid} />
+            )) : null }
         </Layout>
     )
 }
