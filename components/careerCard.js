@@ -1,27 +1,30 @@
-function Description({ text }) {
-    if (!text) {
-        return null
-    } else {
-        return (
-            <div className="mt-4">
-                <p className="text-gray-600">{text}</p>
-            </div>
-        )
-    }
-}
+import MoreIcon from 'components/svg/moreIcon'
+import React from 'react'
 
-export default function CareerCard({ img, employer, title, start, end, description }) {
+import Modal from 'components/modal'
+
+export default function CareerCard({ blok }) {
+    const [showModal, setShowModal] = React.useState(false);
+
     return (
-        <div className="w-96 bg-white border border-gray-300 p-6 m-1 rounded-2xl tracking-wide shadow-lg">
+        <>
+        {showModal ? (<Modal onClick={() => setShowModal(false)} />) : null}
+
+        <div className="w-96 bg-white border border-gray-300 p-4 m-2 rounded-2xl tracking-wide shadow-lg">
             <div className="flex items-center">
-                <img src={img} className="w-20 rounded-full border border-gray-300" />
+                <img src={blok.logo.filename} className="w-20" />
                 <div className="leading-5 ml-6 sm">
-                    <h4 className="text-lg font-semibold">{title}</h4>
-                    <h5 className="font-semibold">{employer}</h5>
-                    <h6 className="text-sm font-semibold">{start} - {end}</h6>
+                    <h4 className="mb-1 text-lg font-semibold">{blok.title}</h4>
+                    <h5 className="font-semibold">{blok.employer}</h5>
+                    <h6 className="mt-1 text-sm font-semibold">{blok.start_date} - {blok.end_date}</h6>
                 </div>
             </div>
-            <Description text={description} />
+            <div className="flex justify-end">
+                <button type="button" onClick={() => setShowModal(true)}>
+                    <MoreIcon />
+                </button>
+            </div>
         </div>
+        </>
     )
 }
