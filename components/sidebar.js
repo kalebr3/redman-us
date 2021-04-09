@@ -17,11 +17,11 @@ export default function Sidebar({ story, active, clickClear }) {
                     {/* Site Title */}
                     <div className="flex items-center justify-center mt-8">
                         <div className="flex items-center">
-                            <span style={{fontFamily: 'raleway'}} className="uppercase text-gray-800 text-2xl font-semibold">{ story ? story.content.site_name : null }</span>
+                            <span className="uppercase text-gray-800 text-2xl font-semibold">{ story ? story.content.site_name : null }</span>
                         </div>
                     </div>
                     {/* Navigation Menu */}
-                    <nav style={{fontFamily: 'raleway'}} className="uppercase flex flex-col mt-8 px-4 text-center flex-grow">
+                    <nav className="uppercase flex flex-col mt-8 px-4 text-center flex-grow">
                         { story ? story.content.navigation_links.map((blok) => (
                             <Link href={blok.url.url} key={blok._uid}>
                                 <a className="mt-3 py-2 text-sm text-gray-600 hover:text-gray-700 hover:bg-gray-200 rounded">{blok.label}</a>
