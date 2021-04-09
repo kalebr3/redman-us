@@ -12,7 +12,7 @@ export default function Section({ blok }) {
     } else {
         return (
             <div className="mt-8">
-                <p className="m-1 pb-3 text-2xl">{title}</p>
+                <p className="m-1 pb-3 text-2xl">{blok.name}</p>
                 { blok ? blok.contents.map((blok) => (
                     <DynamicComponent blok={blok} key={blok._uid} />
                 )) : null }
