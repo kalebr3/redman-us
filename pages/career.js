@@ -1,9 +1,5 @@
 import Layout from 'components/layout'
-import Section from 'components/section'
-// import CardContainer from 'components/cardContainer'
-// import CareerCard from 'components/careerCard'
-
-import Placeholder from 'components/placeholder'
+import DynamicComponent from 'components/DynamicComponent'
 
 import { getPageData, getGlobalData } from 'lib/api'
 import useStoryblok from 'lib/storyblok-hook'
@@ -13,12 +9,9 @@ export default function Career({ global, story, preview }) {
 
     return (
         <Layout data={global} header={ story ? story.name : null }>
-            <Section>
-                {/* <CardContainer>
-                    <CareerCard img="https://picsum.photos/seed/picsum/200" title="Attractions Host" employer="The Walt Disney Company" start="October 2020" end="Present" />
-                </CardContainer> */}
-                <Placeholder text="CAREER" />
-            </Section>
+            { story ? story.content.body.map((blok) => (
+                <DynamicComponent blok={blok} key={blok._uid} />
+            )) : null }
         </Layout>
     )
 }
