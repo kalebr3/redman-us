@@ -1,10 +1,10 @@
-import MoreIcon from 'components/svg/moreIcon'
-import React from 'react'
+import { useState } from 'react'
 
+import MoreIcon from 'components/svg/moreIcon'
 import Modal from 'components/modal'
 
 export default function CareerCard({ blok }) {
-    const [showModal, setShowModal] = React.useState(false);
+    const [showModal, setShowModal] = useState(false);
 
     return (
         <div>
