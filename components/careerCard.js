@@ -7,7 +7,7 @@ export default function CareerCard({ blok }) {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <div>
+        <>
             {showModal ? (<Modal onClick={() => setShowModal(false)} header={blok.title} body={blok.description} footer={false} />) : null}
 
             <div className="w-96 bg-white border border-gray-300 p-6 m-1 rounded-2xl tracking-wide shadow-lg">
@@ -25,6 +25,6 @@ export default function CareerCard({ blok }) {
                     </button>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
