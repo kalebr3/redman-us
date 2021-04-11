@@ -2,6 +2,8 @@ import SbEditable from 'storyblok-react'
 
 import CardContainer from 'components/cardContainer'
 import CareerCard from 'components/careerCard'
+import CertificationCard from 'components/certificationCard'
+import EducationCard from 'components/educationCard'
 import Section from 'components/section'
 import Teaser from 'components/teaser'
 
@@ -11,6 +13,8 @@ import ExclamationIcon from 'components/svg/exclamationIcon'
 const Components = {
     'card_grid': CardContainer,
     'career_card': CareerCard,
+    'certification_card': CertificationCard,
+    'education_card': EducationCard,
     'section': Section,
     'teaser': Teaser,
 }
