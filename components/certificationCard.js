@@ -6,7 +6,7 @@ export default function CertificationCard({ blok }) {
                 <div className="leading-5 ml-6 sm">
                     <h4 className="text-lg font-semibold">{blok.name}</h4>
                     <h5 className="font-semibold">{blok.organization}</h5>
-                    <h6 className="text-sm font-semibold">Class of {blok.date}</h6>
+                    <h6 className="text-sm font-semibold">{blok.date}</h6>
                 </div>
             </div>
         </div>
