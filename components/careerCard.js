@@ -3,6 +3,8 @@ import { useState } from 'react'
 import MoreIcon from 'components/svg/moreIcon'
 import Modal from 'components/modal'
 
+import formatDate from 'lib/formatDate'
+
 export default function CareerCard({ blok }) {
     const [showModal, setShowModal] = useState(false);
 
@@ -16,7 +18,7 @@ export default function CareerCard({ blok }) {
                     <div className="leading-5 ml-6 sm">
                         <h4 className="mb-1 text-lg font-semibold">{blok.title}</h4>
                         <h5 className="font-semibold">{blok.employer}</h5>
-                        <h6 className="mt-1 text-sm font-semibold">{blok.start_date} - {blok.end_date}</h6>
+                        <h6 className="mt-1 text-sm font-semibold">{formatDate(blok.start_date)} - {blok.current ? "Present" : formatDate(blok.end_date) }</h6>
                     </div>
                 </div>
                 <div className="flex justify-end">
