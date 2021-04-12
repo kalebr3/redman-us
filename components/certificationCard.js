@@ -1,9 +1,9 @@
 export default function CertificationCard({ blok }) {
-    const rawDate = new Date("2019-02-01");
+    const rawDate = new Date(blok.date);
     const formattedDate = new Intl.DateTimeFormat("en-US", {
         month: "long",
         year: "numeric",
-    }).format(rawDate)
+    }).format(rawDate);
 
      return (
         <div className="w-96 bg-white border border-gray-300 p-6 m-1 rounded-2xl tracking-wide shadow-lg">
