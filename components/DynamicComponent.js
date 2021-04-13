@@ -4,6 +4,7 @@ import CardContainer from 'components/cardContainer'
 import CareerCard from 'components/careerCard'
 import CertificationCard from 'components/certificationCard'
 import EducationCard from 'components/educationCard'
+import ProjectCard from 'components/projectCard'
 import Section from 'components/section'
 import Teaser from 'components/teaser'
 
@@ -15,6 +16,7 @@ const Components = {
     'career_card': CareerCard,
     'certification_card': CertificationCard,
     'education_card': EducationCard,
+    'project_card': ProjectCard,
     'section': Section,
     'teaser': Teaser,
 }
