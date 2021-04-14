@@ -1,8 +1,8 @@
+import { createMarkup } from 'lib/storyblok'
+
 const Teaser = ({blok}) => {
     return (
-        <div className="grid place-items-center h-96 text-gray-500 text-xl px-6">
-            {blok.description}
-        </div>
+        <div className="grid place-items-center mt-10 h-40 text-gray-500 text-xl px-6" dangerouslySetInnerHTML={createMarkup(blok.description)} />
     )
 }
 
