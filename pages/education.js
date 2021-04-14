@@ -36,7 +36,6 @@ export async function getStaticProps(context) {
             global: globalData ? globalData.story : false,
             story: pageData ? pageData.story : false,
             preview: context.preview || false
-        },
-        revalidate: 10,
+        }
     }
 }
