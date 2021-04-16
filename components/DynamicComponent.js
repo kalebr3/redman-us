@@ -28,6 +28,7 @@ const DynamicComponent = ({blok}) => {
         // Wrap with SbEditable for visual editing
         return (<SbEditable content={blok}><Component blok={blok} /></SbEditable>)
     }
+    // Return error if component is undefined
     return (
         <div className="bg-red-100 p-5 w-full">
             <div className="flex space-x-3">
