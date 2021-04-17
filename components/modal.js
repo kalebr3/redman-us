@@ -1,5 +1,7 @@
 // Custom Component Imports
 import CloseIcon from "components/svg/closeIcon";
+// Custom Logic Imports
+import { createMarkup } from "lib/storyblok";
 
 export default function Modal({ onClick, header, body, footer }) {
   return (
@@ -33,9 +35,10 @@ export default function Modal({ onClick, header, body, footer }) {
             {/*body*/}
             {body ? (
               <div className="relative p-6 flex-auto border-t border-solid border-blueGray-200">
-                <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
-                  {body}
-                </p>
+                <div
+                  className="my-4 text-blueGray-500 text-lg leading-relaxed"
+                  dangerouslySetInnerHTML={createMarkup(body)}
+                ></div>
               </div>
             ) : null}
             {/*footer*/}
