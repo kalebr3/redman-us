@@ -37,11 +37,9 @@ export default function ProjectCard({ blok }) {
           </div>
         </div>
         <div className="flex justify-end">
-          {blok.description ? (
-            <button type="button" onClick={() => setShowModal(true)}>
-              <MoreIcon />
-            </button>
-          ) : null}
+          {/* <button type="button" onClick={() => setShowModal(true)}>
+            <MoreIcon />
+          </button> */}
         </div>
       </div>
     </>
