@@ -41,11 +41,11 @@ export default function ProjectCard({ blok }) {
           </div>
         </div>
         <div className="flex justify-end">
-          {blok.description !== "" ? (
+          {/* blok.description ? (
             <button type="button" onClick={() => setShowModal(true)}>
               <MoreIcon />
             </button>
-          ) : null}
+          ) : null */}
         </div>
       </div>
     </>
