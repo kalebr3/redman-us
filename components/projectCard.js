@@ -20,7 +20,11 @@ export default function ProjectCard({ blok }) {
         />
       ) : null}
 
-      <div className={`${blok.description ? "pb-3" : "pb-4"} pt-4 px-4 m-1 w-96 bg-white border border-gray-300 rounded-2xl tracking-wide shadow-lg`}>
+      <div
+        className={`${
+          blok.description ? "pb-3" : "pb-4"
+        } pt-4 px-4 m-1 w-96 bg-white border border-gray-300 rounded-2xl tracking-wide shadow-lg`}
+      >
         <div className="flex items-center">
           {blok.image.filename ? (
             <img src={blok.image.filename} className="w-20 rounded-full" />
@@ -37,9 +41,11 @@ export default function ProjectCard({ blok }) {
           </div>
         </div>
         <div className="flex justify-end">
-          {/* <button type="button" onClick={() => setShowModal(true)}>
-            <MoreIcon />
-          </button> */}
+          {blok.description ? (
+            <button type="button" onClick={() => setShowModal(true)}>
+              <MoreIcon />
+            </button>
+          ) : null}
         </div>
       </div>
     </>
